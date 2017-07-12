@@ -15,7 +15,11 @@ public class LevelManager : MonoBehaviour {
         LoseCollider.OnFall -= Lose;
     }
 
-    void Lose() {
+    public void Start() {
+        loseScreen.SetActive(false);
+    }
+
+    public void Lose() {
         ShowLoseScreen();
         Time.timeScale = 0;
     }
