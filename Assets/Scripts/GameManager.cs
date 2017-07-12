@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameController : MonoBehaviour {
+public class GameManager : MonoBehaviour {
 
     public float moveSpeed;
     public float minCloudSize, maxCloudSize;
