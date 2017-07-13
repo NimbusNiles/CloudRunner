@@ -40,6 +40,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: NearClouds
+    uniqueID: 3735815939
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
