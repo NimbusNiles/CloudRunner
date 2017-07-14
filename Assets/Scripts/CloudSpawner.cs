@@ -33,7 +33,7 @@ public class CloudSpawner : MonoBehaviour {
         cloud.transform.localPosition += Vector3.right * (cloudSize / 2) - Vector3.right * 0.5f;
         cloud.transform.localScale += Vector3.right * cloudSize;
 
-        cloud.GetComponent<Rigidbody2D>().velocity = Vector2.left * cloudSpeed;
+        //cloud.GetComponent<Rigidbody2D>().velocity = Vector2.left * cloudSpeed;
         cloud.tag = "Cloud";
         
     }
