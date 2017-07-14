@@ -20,8 +20,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4657092729326192}
   - component: {fileID: 212682375144484156}
-  - component: {fileID: 61733971910589536}
   - component: {fileID: 50153762583596478}
+  - component: {fileID: 68363052890459176}
   m_Layer: 0
   m_Name: Cloud
   m_TagString: Untagged
@@ -62,8 +62,8 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &61733971910589536
-BoxCollider2D:
+--- !u!68 &68363052890459176
+EdgeCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -74,19 +74,11 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.16}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 2
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
+  m_Offset: {x: 0, y: 0.5}
   m_EdgeRadius: 0
+  m_Points:
+  - {x: -0.5, y: 0}
+  - {x: 0.5, y: 0}
 --- !u!212 &212682375144484156
 SpriteRenderer:
   m_ObjectHideFlags: 1

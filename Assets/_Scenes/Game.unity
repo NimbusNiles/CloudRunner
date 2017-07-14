@@ -280,6 +280,28 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &399249936 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1383185915982904, guid: 768078b7d50a0814783c163051196ecf,
+    type: 2}
+  m_PrefabInternal: {fileID: 1937503988}
+--- !u!68 &399249941
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 399249936}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.5}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: -11, y: 0}
+  - {x: 11, y: 0}
 --- !u!1 &416412339
 GameObject:
   m_ObjectHideFlags: 0
@@ -4554,6 +4576,11 @@ Prefab:
         type: 2}
       propertyPath: m_Size.x
       value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 61875363299464216, guid: 768078b7d50a0814783c163051196ecf,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 768078b7d50a0814783c163051196ecf, type: 2}
