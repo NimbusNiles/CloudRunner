@@ -12,10 +12,12 @@ public class PlayerController : MonoBehaviour {
     private float inputPressedForSeconds = 0;
 
     private SpriteRenderer spriteRenderer;
+    private Animator myAnimator;
 
 	// Use this for initialization
 	void Start () {
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
+        myAnimator = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -46,10 +48,12 @@ public class PlayerController : MonoBehaviour {
 
     void Jump(float jumpPercent) {
         GetComponent<Rigidbody2D>().AddForce(Vector2.up * jumpPercent * jumpForce);
+        myAnimator.Play("Jumping");
     }
 
     private void OnCollisionEnter2D(Collision2D collision) {
         canJump = true;
+        myAnimator.Play("Idle");
     }
 
 
