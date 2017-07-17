@@ -56,5 +56,9 @@ public class PlayerController : MonoBehaviour {
         myAnimator.Play("Idle");
     }
 
+    private void OnCollisionExit2D(Collision2D collision) {
+        canJump = false;
+    }
+
 
 }
