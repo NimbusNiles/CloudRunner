@@ -28,8 +28,8 @@ public class SpeedManager : MonoBehaviour {
 
     int GetCurrentSpeedRange() {
         for(int ii = 0; ii < speedRanges.Count; ii++) {
-            if (CurrentSpeed < speedRanges[ii]) {
-                return ii - 1;
+            if (CurrentSpeed > speedRanges[ii]) {
+                return ii;
             }
         }
         return speedRanges.Count;
