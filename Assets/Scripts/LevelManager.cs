@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour {
 
-    public GameObject loseScreen;
+    public GameObject restartButton;
 
     private void OnEnable() {
         LoseCollider.OnFall += Lose;
@@ -16,7 +16,7 @@ public class LevelManager : MonoBehaviour {
     }
 
     public void Start() {
-        loseScreen.SetActive(false);
+        restartButton.SetActive(false);
     }
 
     public void Lose() {
@@ -25,11 +25,11 @@ public class LevelManager : MonoBehaviour {
     }
 
     void ShowLoseScreen() {
-        loseScreen.SetActive(true);
+        restartButton.SetActive(true);
     }
 
     public void RestartScene() {
-        loseScreen.SetActive(false);
+        restartButton.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1;
     }
