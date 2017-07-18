@@ -12,7 +12,7 @@ public class GroundObstacle : MonoBehaviour {
 
     private void OnTriggerEnter2D(Collider2D collision) {
         if(collision.tag == "Player") {
-            levelManager.Lose();
+            Debug.Log("Player hit by obstacle");
         }
     }
 }

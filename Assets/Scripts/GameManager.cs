@@ -40,4 +40,6 @@ public class GameManager : MonoBehaviour {
             nextCloudSize = Random.Range(minCloudSize, maxCloudSize);
         }
     }
+
+
 }
