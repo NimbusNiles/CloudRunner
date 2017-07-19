@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class LoseCollider : MonoBehaviour {
 
-    public GameObject restartButton;
+    public GameObject LoseScreen;
     
     public void Start() {
-        restartButton.SetActive(false);
+        LoseScreen.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
@@ -15,7 +15,7 @@ public class LoseCollider : MonoBehaviour {
     }
 
     void OnFall() {
-        restartButton.SetActive(true);
+        LoseScreen.SetActive(true);
         Time.timeScale = 0;
     }
 }
