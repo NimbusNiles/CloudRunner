@@ -10,6 +10,7 @@ public class SpeedManager : MonoBehaviour {
     public List<float> speedRanges;
     public List<float> accelerationRanges;
     public GameObject cloudContainer;
+    public GameObject goldContainer;
 
     private float acceleration;
 
@@ -24,6 +25,8 @@ public class SpeedManager : MonoBehaviour {
         CurrentSpeed += acceleration * Time.deltaTime;
 
         cloudContainer.GetComponent<Rigidbody2D>().velocity = Vector2.left * CurrentSpeed;
+        goldContainer.GetComponent<Rigidbody2D>().velocity = Vector2.left * CurrentSpeed;
+
     }
 
     int GetCurrentSpeedRange() {

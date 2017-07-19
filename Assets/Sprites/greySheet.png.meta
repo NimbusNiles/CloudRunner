@@ -1,11 +1,12 @@
 fileFormatVersion: 2
 guid: ecf7eaa4fd6a24b41950aa5b50a4b79d
-timeCreated: 1500305216
+timeCreated: 1500477709
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
     21300000: Button_TwoTone_Unpressed
     21300002: Button_TwoTone_Pressed
+    21300004: CircleBotton
   serializedVersion: 4
   mipmaps:
     mipMapMode: 0
@@ -111,6 +112,19 @@ TextureImporter:
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 3, y: 3, z: 3, w: 3}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: CircleBotton
+      rect:
+        serializedVersion: 2
+        x: 185
+        y: 7
+        width: 36
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     outline: []
