@@ -53,6 +53,7 @@ public class GameManager : MonoBehaviour {
         timeSinceLastGold += Time.deltaTime;
         if (timeSinceLastGold > nextGoldTime) {
             goldSpawner.SpawnGold(moveSpeed,Color.yellow);
+            nextGoldTime = Random.Range(minGoldTime, maxGoldTime);
             timeSinceLastGold = 0;
         }
     }

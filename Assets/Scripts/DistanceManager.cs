@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class DistanceManager : MonoBehaviour {
 
-    public Text distanceText;
+    public TextMeshProUGUI distanceDisplay;
     public GameManager gameManager;
 
     private float distanceTravelled = 0;
@@ -18,6 +19,6 @@ public class DistanceManager : MonoBehaviour {
 
     void UpdateDistanceDisplay() {
         int distanceToDisplay = Mathf.RoundToInt(distanceTravelled);
-        distanceText.text = distanceToDisplay.ToString() + " m";
+        distanceDisplay.text = distanceToDisplay.ToString() + " m";
     }
 }
