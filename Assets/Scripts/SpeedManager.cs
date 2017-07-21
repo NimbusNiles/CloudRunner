@@ -19,20 +19,21 @@ public class SpeedManager : MonoBehaviour {
     }
 
     public void Update() {
-        int speedRange = GetCurrentSpeedRange();
+        int speedRange = GetCurrentSpeedRange(speedRanges, CurrentSpeed);
         acceleration = accelerationRanges[speedRange];
 
         CurrentSpeed += acceleration * Time.deltaTime;
+        Debug.Log(CurrentSpeed);
 
         cloudContainer.GetComponent<Rigidbody2D>().velocity = Vector2.left * CurrentSpeed;
         goldContainer.GetComponent<Rigidbody2D>().velocity = Vector2.left * CurrentSpeed;
 
     }
 
-    int GetCurrentSpeedRange() {
+    public static int GetCurrentSpeedRange(List<float> speedRanges, float currentSpeed) {
         for(int ii = 0; ii < speedRanges.Count; ii++) {
-            if (CurrentSpeed > speedRanges[ii]) {
-                return ii;
+            if (currentSpeed < speedRanges[ii]) {
+                return ii-1;
             }
         }
         return speedRanges.Count;
