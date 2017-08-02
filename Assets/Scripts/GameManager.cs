@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour {
     // Gold
     public float minGoldTime, maxGoldTime;
 
-    private float timeSinceLastGold, nextGoldTime;
+    private float timeSinceLastGold, nextGoldTime, goldHeight;
     private GoldSpawner goldSpawner;
     
     //private GroundObstacleSpawner groundObstacleSpawner;
@@ -52,7 +52,13 @@ public class GameManager : MonoBehaviour {
 
         timeSinceLastGold += Time.deltaTime;
         if (timeSinceLastGold > nextGoldTime) {
-            goldSpawner.SpawnGold(moveSpeed,Color.yellow);
+            if (cloudLeft) {
+                goldHeight = 2f;
+            } else {
+                goldHeight = 0f;
+            }
+
+            goldSpawner.SpawnGold(moveSpeed,Color.yellow, goldHeight);
             nextGoldTime = Random.Range(minGoldTime, maxGoldTime);
             timeSinceLastGold = 0;
         }

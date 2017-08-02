@@ -20,8 +20,11 @@ public class GoldSpawner : MonoBehaviour {
         }
     }
     
-    public void SpawnGold(float goldSpeed, Color coinColor) {
-        GameObject gold = Instantiate(goldPrefab, transform.position, Quaternion.identity);
+    public void SpawnGold(float goldSpeed, Color coinColor, float height) {
+        Vector3 spawnPosition = transform.position;
+        spawnPosition.y += height;
+
+        GameObject gold = Instantiate(goldPrefab, spawnPosition, Quaternion.identity);
         gold.transform.parent = goldParent.transform;
 
         gold.GetComponent<Rigidbody2D>().velocity = Vector2.left * goldSpeed;
