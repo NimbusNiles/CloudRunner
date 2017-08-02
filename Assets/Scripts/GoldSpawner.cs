@@ -27,6 +27,9 @@ public class GoldSpawner : MonoBehaviour {
         gold.GetComponent<Rigidbody2D>().velocity = Vector2.left * goldSpeed;
         gold.GetComponent<SpriteRenderer>().color = coinColor;
         gold.tag = "Gold";
+
+        gold.GetComponent<GoldCoin>().coinValue = GoldManager.CurrentGoldValue;
+        gold.GetComponent<SpriteRenderer>().color = GoldManager.CurrentGoldColor;
     }
 
 }

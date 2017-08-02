@@ -23,7 +23,6 @@ public class SpeedManager : MonoBehaviour {
         acceleration = accelerationRanges[speedRange];
 
         CurrentSpeed += acceleration * Time.deltaTime;
-        Debug.Log(CurrentSpeed);
 
         cloudContainer.GetComponent<Rigidbody2D>().velocity = Vector2.left * CurrentSpeed;
         goldContainer.GetComponent<Rigidbody2D>().velocity = Vector2.left * CurrentSpeed;

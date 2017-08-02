@@ -3,11 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System;
 
 public class DistanceManager : MonoBehaviour {
 
     public TextMeshProUGUI distanceDisplay;
     public GameManager gameManager;
+
+    public static Action<int> OnReachingMeters;
 
     private float distanceTravelled = 0;
 
@@ -15,6 +18,16 @@ public class DistanceManager : MonoBehaviour {
     void Update() {
         distanceTravelled += Time.deltaTime * gameManager.moveSpeed;
         UpdateDistanceDisplay();
+
+        if (distanceTravelled >= 100) {
+            OnReachingMeters(100);
+            return;
+        }
+
+        if (distanceTravelled >= 0 && distanceTravelled < 100) {
+            OnReachingMeters(0);
+            return;
+        }
     }
 
     void UpdateDistanceDisplay() {
