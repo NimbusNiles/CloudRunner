@@ -9,7 +9,6 @@ public class GoldCoin : MonoBehaviour {
 
     public static event Action<int> OnGoldPickup;
    
-    private float spinTime = 1f;
     private float spinDelta = 2f;
     private float spinDirection = -1;
     private Vector3 scaleVector = Vector3.one;
@@ -37,7 +36,6 @@ public class GoldCoin : MonoBehaviour {
         }
 
         transform.localScale = new Vector3(scaleVector.x * initialScale.x, initialScale.y,initialScale.z);
-        Debug.Log(transform.localScale);
     }
 
 }

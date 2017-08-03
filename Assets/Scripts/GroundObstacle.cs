@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class GroundObstacle : MonoBehaviour {
 
-    private LevelManager levelManager;
+    //private LevelManager levelManager;
 
     private void Start() {
-        levelManager = FindObjectOfType<LevelManager>();
+        //levelManager = FindObjectOfType<LevelManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision) {
