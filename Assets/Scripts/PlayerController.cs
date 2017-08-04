@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerController : MonoBehaviour {
 
@@ -13,11 +14,14 @@ public class PlayerController : MonoBehaviour {
 
     private SpriteRenderer spriteRenderer;
     private Animator myAnimator;
+    private Image fillImage; 
 
 	// Use this for initialization
 	void Start () {
         spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         myAnimator = GetComponent<Animator>();
+        fillImage = GetComponentInChildren<Image>();
+        Debug.Log(fillImage);
 	}
 	
 	// Update is called once per frame
@@ -25,16 +29,16 @@ public class PlayerController : MonoBehaviour {
 		if (Input.GetKeyDown(KeyCode.Space)) {
             inputPressed = true;
             inputPressedForSeconds = 0f;
-            spriteRenderer.color = Color.red;
         }
 
         if (inputPressed) {
             inputPressedForSeconds += Time.deltaTime;
+            fillImage.fillAmount = Mathf.Clamp(inputPressedForSeconds / inputTimeToMaxJump,0f,1f);
         }
 
         if (Input.GetKeyUp(KeyCode.Space)) {
             inputPressed = false;
-            spriteRenderer.color = Color.white;
+            fillImage.fillAmount = 0f;
 
             if (canJump) {
                 float jumpPercent = Mathf.Clamp(inputPressedForSeconds / inputTimeToMaxJump, 0.75f, 1);

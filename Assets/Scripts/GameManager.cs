@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour {
     public float minCloudSize, maxCloudSize;
     public float minCloudGap, maxCloudGap;
     public bool cloudLeft = true;
+    public bool noGaps;
     
     private float currentGap, nextCloudGap;
     private float nextCloudSize;
@@ -40,29 +41,36 @@ public class GameManager : MonoBehaviour {
     private void Update() {
         if (cloudLeft) {
             currentGap += moveSpeed * Time.deltaTime;
-        }
 
-        if (currentGap >= nextCloudGap) {
-            cloudSpawner.SpawnNextCloud(nextCloudSize, moveSpeed);
-            cloudLeft = false;
-            currentGap = 0;
-            nextCloudGap = Random.Range(minCloudGap, maxCloudGap);
-            nextCloudSize = Random.Range(minCloudSize, maxCloudSize);
-        }
-
-        timeSinceLastGold += Time.deltaTime;
-        if (timeSinceLastGold > nextGoldTime) {
-            if (cloudLeft) {
-                goldHeight = 2f;
-            } else {
-                goldHeight = 0f;
+            if (currentGap >= nextCloudGap || noGaps) {
+                SpawnCloud();
             }
-
-            goldSpawner.SpawnGold(moveSpeed,Color.yellow, goldHeight);
-            nextGoldTime = Random.Range(minGoldTime, maxGoldTime);
-            timeSinceLastGold = 0;
         }
+
+
+        //timeSinceLastGold += Time.deltaTime;
+        //if (timeSinceLastGold > nextGoldTime) {
+        //    SpawnCoin();
+        //}
     }
 
+    private void SpawnCoin() {
+        if (cloudLeft) {
+            goldHeight = 2f;
+        } else {
+            goldHeight = 0f;
+        }
 
+        goldSpawner.SpawnGold(moveSpeed, Color.yellow, goldHeight);
+        nextGoldTime = Random.Range(minGoldTime, maxGoldTime);
+        timeSinceLastGold = 0;
+    }
+
+    private void SpawnCloud() {
+        cloudSpawner.SpawnNextCloud(nextCloudSize, moveSpeed);
+        cloudLeft = false;
+        currentGap = 0;
+        nextCloudGap = Random.Range(minCloudGap, maxCloudGap);
+        nextCloudSize = Random.Range(minCloudSize, maxCloudSize);
+    }
 }

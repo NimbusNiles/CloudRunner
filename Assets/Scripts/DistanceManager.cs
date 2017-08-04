@@ -20,12 +20,16 @@ public class DistanceManager : MonoBehaviour {
         UpdateDistanceDisplay();
 
         if (distanceTravelled >= 100) {
-            OnReachingMeters(100);
+            if (OnReachingMeters != null) {
+                OnReachingMeters(100);
+            }
             return;
         }
 
         if (distanceTravelled >= 0 && distanceTravelled < 100) {
-            OnReachingMeters(0);
+            if (OnReachingMeters != null) {
+                OnReachingMeters(0);
+            }
             return;
         }
     }
