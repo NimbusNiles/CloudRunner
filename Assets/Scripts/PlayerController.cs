@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -11,17 +11,14 @@ public class PlayerController : MonoBehaviour {
 
     private bool inputPressed = false;
     private float inputPressedForSeconds = 0;
-
-    private SpriteRenderer spriteRenderer;
+    
     private Animator myAnimator;
     private Image fillImage; 
 
 	// Use this for initialization
 	void Start () {
-        spriteRenderer = GetComponentInChildren<SpriteRenderer>();
         myAnimator = GetComponent<Animator>();
         fillImage = GetComponentInChildren<Image>();
-        Debug.Log(fillImage);
 	}
 	
 	// Update is called once per frame
